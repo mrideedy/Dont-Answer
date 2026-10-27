@@ -1,0 +1,23 @@
+{
+  "_help": "Pick a voice for each character in ElevenLabs (Voice Library, or Voice Design using the description), copy its Voice ID, and paste it into voice_id. Mimic lines reuse the same voice with unstable settings; the game adds the rest of the wrongness.",
+  "model_id": "eleven_multilingual_v2",
+  "settings": {
+    "human":  { "stability": 0.45, "similarity_boost": 0.8, "style": 0.25, "use_speaker_boost": true },
+    "memory": { "stability": 0.4,  "similarity_boost": 0.8, "style": 0.35, "use_speaker_boost": true },
+    "mimic":  { "stability": 0.12, "similarity_boost": 0.9, "style": 0.0,  "use_speaker_boost": true }
+  },
+  "voices": {
+    "voss":    { "voice_id": "", "description": "Elderly man in his 70s. Gravelly, tired, slow small-town American. Has seen terrible things and doesn't talk about them." },
+    "leo":     { "voice_id": "", "description": "Boy around 9 years old. Soft, sweet, a little shy. If you can't find a child voice, pick the youngest, softest voice available; the game can raise its pitch slightly." },
+    "mom":     { "voice_id": "", "description": "Woman in her 50s. Exhausted, tearful, loving." },
+    "anchor":  { "voice_id": "", "description": "Male local TV news anchor, 50s, 1990s broadcast style. Measured and professional." },
+    "marco":   { "voice_id": "", "description": "Young man in his 20s. Friendly pizza driver, slightly nervous, New Jersey / Italian-American flavor." },
+    "kids":    { "voice_id": "", "description": "A child's voice (any). The game layers it three times so it sounds like children speaking in unison." },
+    "ana":     { "voice_id": "", "description": "Woman in her late 20s. Warm, sarcastic, slightly husky. Sam's best friend." },
+    "officer": { "voice_id": "", "description": "Man in his 40s. Deep, calm, flat, authoritative police voice." },
+    "tom":     { "voice_id": "", "description": "Young man in his 20s. Goofy, cheerful, a bit drunk." },
+    "eli":     { "voice_id": "", "description": "Man in his 40s. Breathless, panicked, in pain." },
+    "dad":     { "voice_id": "", "description": "Man in his 50s. Rough, gravelly, emotional, a little drunk. A broken father." },
+    "hale":    { "voice_id": "", "description": "Elderly woman in her 80s. Sweet, sing-song grandmother voice that makes your skin crawl." }
+  }
+}

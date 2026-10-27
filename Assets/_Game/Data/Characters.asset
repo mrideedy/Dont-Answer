@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ffaa3dab4f605d4bb32c65e0fc5dd3d, type: 3}
+  m_Name: Characters
+  m_EditorClassIdentifier: Assembly-CSharp::DontAnswer.CharacterLibrary
+  models:
+  - name: Casual_Character
+    prefab: {fileID: 1522164047602194343, guid: 621a88264daec3f40bf6ad743525b32e, type: 3}
+  - name: Hoodie_Character
+    prefab: {fileID: 5148420188163749290, guid: 903eddbb0b231b04a8441a8b4c41f7bd, type: 3}
+  - name: Punk
+    prefab: {fileID: 3509170543846724023, guid: 6f7792f31a4d0014b9fbcb364f498d93, type: 3}
+  - name: Business_Man
+    prefab: {fileID: 4270367784697709773, guid: 869baea797ae359419d31313d2d1e290, type: 3}
+  - name: Farmer
+    prefab: {fileID: 3703598126951941660, guid: 9f54f34482253ae41974d57570d93085, type: 3}
+  - name: Adventurer
+    prefab: {fileID: 9139260003861220618, guid: d6fe31e9ccbde1f488c79069ff9d6e08, type: 3}
+  - name: Hooded_Adventurer
+    prefab: {fileID: 342285577462353936, guid: 211237c36f6a3f341ba06c502f9e2beb, type: 3}
+  - name: Animated_Woman
+    prefab: {fileID: 6532703991420953924, guid: b697761a635beca499f97dd04d5ae798, type: 3}
+  - name: Witch
+    prefab: {fileID: 7248189376479095257, guid: bd04c5dbab5b44b4686ca8e3fe36adb8, type: 3}
+  clips:
+  - {fileID: 7400000, guid: 71b3f34e2ce0ad846a0339737685bba8, type: 2}
+  - {fileID: 7400000, guid: 71d1e65efe6c5944f859c17b9b6d42ec, type: 2}
+  - {fileID: 7400000, guid: c9c500ab1e192934da3adf3ecc9d4715, type: 2}
+  - {fileID: 7400000, guid: 8397dc9914b46f54f8c45686e1a0ce8c, type: 2}
+  - {fileID: 7400000, guid: 322125219b965ab43bd258c3c2095c4c, type: 2}
+  - {fileID: 7400000, guid: 1dbe0f442ca43e84ba7329d58a569ce0, type: 2}
+  - {fileID: 7400000, guid: 4b81055d5febcec4b82729060bd9759b, type: 2}
+  - {fileID: 7400000, guid: ea6e13c28f0314348b994575bc33a426, type: 2}
+  - {fileID: 7400000, guid: 400b77c3e1370d1478dc585268c2cb40, type: 2}
+  clipSource: Casual_Character

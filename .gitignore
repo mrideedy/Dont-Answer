@@ -1,0 +1,74 @@
+# ===== Unity generated =====
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+/.utmp/
+/.offline/
+
+# ===== Builds (APKs are too big for GitHub) =====
+/[Bb]uild/
+/[Bb]uilds/
+/[Bb]uild[s]*/
+*.apk
+*.aab
+*.unitypackage
+*_BackUpThisFolder_ButDontShipItWithYourGame/
+*_BurstDebugInformation_DoNotShip/
+
+# ===== SECRETS: never commit =====
+/[Kk]eystore/
+*.keystore
+*.jks
+google-services.json
+GoogleService-Info.plist
+
+# ===== Other version control / tools =====
+.plastic/
+ignore.conf
+.claude/
+.vscode/
+.vs/
+
+# ===== IDE / solution files Unity regenerates =====
+*.csproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# ===== Large media (upload to a release or YouTube instead) =====
+/Clips/
+/Captures/
+/Trailer/
+*.mp4
+*.mov
+
+# ===== OS junk =====
+.DS_Store
+Thumbs.db
+
+# ===== Tool build output =====
+[Bb]in/
+[Oo]bj/
+__pycache__/
+*.pyc
+.env
+/Tools/marketing/trailer/out/
+
+# ===== Don't Answer: large / third-party tool files =====
+/Tools/kokoro/
+/Tools/downloads/
+/Tools/voice_backup_*/
+/Tools/*_log.txt
+*.onnx

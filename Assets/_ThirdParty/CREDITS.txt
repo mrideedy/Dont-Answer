@@ -1,0 +1,8 @@
+Sound effects (CC0 1.0) from OpenGameArt.org:
+- 100 CC0 SFX, 100 CC0 SFX #2, 80 CC0 creature SFX (rubberduck) https://opengameart.org
+- Horror Hit Soundpack 1 https://opengameart.org/content/horror-hit-soundpack-1
+Voices performed with Chatterbox by Resemble AI (MIT) https://github.com/resemble-ai/chatterbox
+  cloning reference voices made with Kokoro-82M (Apache-2.0) https://huggingface.co/hexgrad/Kokoro-82M
+Fonts: Special Elite (Apache-2.0), VT323 (OFL) via Google Fonts.
+Characters: Quaternius Ultimate Modular Men & Women (CC0).
+Mutant1 creature: from the developer's own asset library (LastLight project).

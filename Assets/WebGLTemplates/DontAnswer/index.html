@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+    <title>{{{ PRODUCT_NAME }}}</title>
+    <style>
+      /* The game fills whatever it's given: the itch.io frame, a browser tab, or the whole screen in fullscreen. */
+      html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+      #unity-canvas { position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: block; background: #000; outline: none; }
+      #loading { position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;
+                 background: #000; color: #ede8de; font-family: "Courier New", Courier, monospace; transition: opacity 0.6s; z-index: 5; }
+      #loading h1 { margin: 0 0 10px; font-size: clamp(30px, 6vw, 76px); letter-spacing: 0.06em; text-shadow: 3px 3px 0 #8c0a08; }
+      #loading p { margin: 0 0 30px; color: #ff9e40; font-size: clamp(13px, 1.7vw, 19px); }
+      #bar { width: min(360px, 60vw); height: 4px; background: #26262a; }
+      #bar-fill { width: 0%; height: 100%; background: #ff9e40; transition: width 0.25s; }
+      #hint { margin-top: 20px; color: #6f6f74; font-size: 13px; }
+      #unity-warning { position: fixed; left: 50%; top: 5%; transform: translateX(-50%); display: none; z-index: 10; font-family: sans-serif; }
+    </style>
+  </head>
+  <body>
+    <canvas id="unity-canvas" width={{{ WIDTH }}} height={{{ HEIGHT }}} tabindex="-1"></canvas>
+    <div id="loading">
+      <h1>DON'T ANSWER</h1>
+      <p>Some of the knocks tonight won't be people.</p>
+      <div id="bar"><div id="bar-fill"></div></div>
+      <div id="hint">Best played with headphones, in fullscreen.</div>
+    </div>
+    <div id="unity-warning"></div>
+    <script>
+      var canvas = document.querySelector("#unity-canvas");
+
+      // Warnings show for a few seconds; errors stay on top of the game.
+      function unityShowBanner(msg, type) {
+        var banner = document.querySelector("#unity-warning");
+        function update() { banner.style.display = banner.children.length ? "block" : "none"; }
+        var div = document.createElement("div");
+        div.innerHTML = msg;
+        div.style = type == "error" ? "background: #b00; color: #fff; padding: 10px;" : "background: #ffd54a; padding: 10px;";
+        banner.appendChild(div);
+        if (type != "error") setTimeout(function () { banner.removeChild(div); update(); }, 5000);
+        update();
+      }
+
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
+      var config = {
+        arguments: [],
+        dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
+        frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
+#if USE_WASM
+        codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
+#endif
+#if SYMBOLS_FILENAME
+        symbolsUrl: buildUrl + "/{{{ SYMBOLS_FILENAME }}}",
+#endif
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: {{{ JSON.stringify(COMPANY_NAME) }}},
+        productName: {{{ JSON.stringify(PRODUCT_NAME) }}},
+        productVersion: {{{ JSON.stringify(PRODUCT_VERSION) }}},
+        showBanner: unityShowBanner,
+        // The page renders at the window's full size, so text and UI are always sharp. The game itself lowers the 3D
+        // view's resolution when the GPU can't keep up (WebDynamicResolution.cs).
+        devicePixelRatio: 1,
+      };
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = function () {
+        createUnityInstance(canvas, config, function (progress) {
+          document.querySelector("#bar-fill").style.width = (100 * progress) + "%";
+        }).then(function () {
+          var loading = document.querySelector("#loading");
+          loading.style.opacity = 0;
+          setTimeout(function () { loading.style.display = "none"; }, 650);
+          canvas.focus();
+        }).catch(function (message) {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>
